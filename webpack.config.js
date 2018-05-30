@@ -22,8 +22,8 @@ module.exports = (options = {}) => ({
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      '@': resolve(__dirname,srcCatalog),
-      '@scss': resolve(__dirname,srcCatalog,'styles'),
+      '@': resolve(__dirname, srcCatalog),
+      '@scss': resolve(__dirname, srcCatalog, 'styles'),
     }
   },
   module: {
@@ -35,13 +35,17 @@ module.exports = (options = {}) => ({
             //scss: 'style-loader!css-loader!sass-loader'
             //scss:ExtractTextPlugin.extract(['style-loader','css-loader','sass-loader'])
             scss: ExtractTextPlugin.extract({
-              use: ['sass-loader', 'css-loader', 'style-loader'],
-              fallback: 'vue-style-loader'
+              use: ['css-loader', 'sass-loader'],
+              fallback: 'style-loader'
+            }),
+            sass: ExtractTextPlugin.extract({
+              use: ['css-loader', 'sass-loader'],
+              fallback: 'style-loader'
             }),
             css: ExtractTextPlugin.extract({
-              use: 'css-loader'
+              use: ['css-loader'],
+              fallback: 'vue-style-loader' // <- 这是vue-loader的依赖，所以如果使用npm3，则不需要显式安装
             })
-
           }
         }
       }, {
