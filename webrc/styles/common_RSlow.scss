@@ -1,0 +1,253 @@
+/*ar css*/
+
+.ar body {
+    direction: rtl;
+}
+
+
+/*home module*/
+
+.ar #index .el-col .title {
+    padding-right: 114px!important;
+}
+
+.ar #index .el-col #login .title {
+    padding-right: 0px!important;
+}
+
+.ar #login .el-form .el-input {
+    margin-right: 0px;
+}
+
+.ar .el-checkbox__label {
+    padding: 0 5px 0 0;
+}
+
+.ar .el-col-11 {
+    direction: ltr;
+}
+
+.ar .footer .svg-logo {
+    left: 5px;
+    right: auto;
+}
+
+.ar .el-icon--right {
+    margin: 0 5px 0 0;
+}
+
+
+/*Subpage module*/
+
+.ar .el-col-5,
+.ar .el-col-19 {
+    float: right;
+}
+
+.ar .main-block {
+    float: left;
+    padding: 0 10px 10px 0;
+}
+
+.ar #sideMenu .el-menu {
+    padding-right: 0px;
+}
+
+.ar #sideMenu .el-submenu .el-menu-item {
+    padding-left: 10px!important;
+    padding-right: 40px;
+}
+
+.ar #sideMenu .el-menu .el-submenu__title .el-submenu__icon-arrow {
+    right: auto;
+    left: 10px;
+}
+
+.ar #sideMenu .el-menu .iconfont {
+    float: right;
+}
+
+.ar .main-menu.el-menu {
+    padding: 0px 160px 0 0px;
+}
+
+.ar .main-menu.el-menu--horizontal .el-menu-item {
+    float: right;
+}
+
+.ar .main-menu.el-menu .main-menu-line {
+    margin-left: 0px;
+    margin-right: 19px;
+}
+
+.ar .main-menu.el-menu .el-menu-item {
+    padding-left: 19px;
+}
+
+.ar .main-menu.el-menu .el-menu-item span {
+    float: right;
+}
+
+
+/*common */
+
+.ar .el-form-item__label {
+    float: right;
+}
+
+.ar .el-form-item__content {
+    margin-right: 198px;
+    margin-left: 0px!important;
+}
+
+.ar .el-radio__label {
+    padding-left: 0px;
+    padding-right: 5px;
+}
+
+.ar .el-select-dropdown__wrap.el-scrollbar__wrap {
+    margin-left: -17px;
+    margin-right: 0px!important;
+}
+
+.ar .el-button {
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.ar .el-form .el-select,
+.ar .el-form .el-input,
+.ar .el-form .el-text {
+    margin-right: 0px;
+    margin-left: 8px;
+}
+
+.ar .el-dialog__headerbtn {
+    float: left;
+}
+
+.ar .el-form-item__label {
+    text-align: left;
+}
+
+.ar span.add {
+    float: left!important;
+}
+
+.ar span.add .el-button,
+.ar #reboot .el-button,
+.ar #reset .el-button {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ar .el-form-item__label {
+    padding: 11px 0 11px 12px;
+}
+
+.ar #reset .reset {
+    text-align: right;
+}
+
+.ar #onlineUpgrade .main-block .title {
+    margin-top: 0px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+.ar #restore .el-col-17,
+.ar #restore .el-col-15,
+.ar #restore .uploadFile .inline-input {
+    float: right;
+}
+
+.ar #restore {
+    .textAlignRight {
+        text-align: left;
+    }
+    .uploadFile .fileUpload {
+        right: auto;
+        left: 50px;
+    }
+}
+
+.ar #outboxList #btnDelete,
+.ar #inboxList #btnDelete,
+.ar #draftList #btnDelete,
+.ar #callLogs #deleteBtn {
+    float: left;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ar .el-pagination {
+    direction: ltr;
+}
+
+.ar .jumper,
+.ar .jumper .el-button,
+.ar .el-pagination,
+.ar .jumper .el-input,
+.ar .smsCount {
+    float: left!important;
+}
+
+.ar .tipsInfo {
+    float: right;
+}
+
+.ar #newSMSContent .el-input-group__prepend,
+.ar #outboxDetail .el-input-group__prepend,
+.ar #inboxDetail .el-input-group__prepend {
+    border-left: 0;
+    border-right: 1px solid #bfcbd9;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.ar .el-input-group--prepend .el-input__inner,
+.ar .el-input-group__append {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.ar .el-message-box {
+    text-align: right;
+    .el-message-box__close {
+        left: 20px;
+        right: auto;
+    }
+    .el-message-box__message {
+        margin-left: 0!important;
+    }
+    .el-icon-warning+.el-message-box__message,
+    .el-icon-information+.el-message-box__message,
+    .el-icon-circle-check+.el-message-box__message,
+    .el-icon-circle-cross+.el-message-box__message {
+        margin-right: 50px;
+    }
+    .el-message-box__btns {
+        text-align: left;
+    }
+}
+
+.ar .el-checkbox__original {
+    right: -999px;
+    left: auto;
+}
+
+.ar .el-message {
+    .el-message__img {
+        left: auto;
+        right: 0;
+    }
+    .el-message__group {
+        margin-right: 38px;
+        margin-left: 0px;
+    }
+}

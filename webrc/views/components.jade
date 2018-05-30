@@ -1,0 +1,126 @@
+doctype html
+mixin form(form)
+  el-form(:rules="formRules" ref="#{form}",:model="#{form}" label-width="198px")&attributes(attributes)
+    if block
+      block
+
+mixin formItem(label)
+  - var isIds= label.indexOf("ids_")==0?true:false;
+  - var labels = label.split(":");
+  - var _label = labels[0];
+  - var colon =labels.length>1?":":"";
+  if isIds
+    el-form-item(:label="vuex.res.#{_label}+'#{colon}'")&attributes(attributes)
+      if block
+        block
+  else
+    el-form-item(label="#{label}")&attributes(attributes)
+      if block
+        block
+
+mixin span(label1)
+  - var isIds= label1.indexOf("ids_")==0?true:false;
+  if isIds
+    span&attributes(attributes) {{vuex.res.#{label1}}}
+  else
+    span&attributes(attributes) #{label1}
+
+mixin input(label,model,label1)
+  - var prop= model.replace(/\./,':');  
+  +formItem(label)(prop="#{prop}")
+    el-input-number(v-model="formData.#{model}" v-if="typeof formData.#{model} =='number'")&attributes(attributes)
+    el-input(v-model.trim="formData.#{model}" v-else)&attributes(attributes)
+    if label1
+      +span(label1)(class="last-span")
+    else if block
+      block
+
+mixin select(label,name,label1)
+  +formItem(label)
+    el-select(v-model.mumber="formData.#{name}")&attributes(attributes)
+      el-option(v-for="val in formOptions.#{name}",:label="(String(val[1]).indexOf('ids_')==0?vuex.res[val[1]]:val[1])",:value.number="val[0]")
+    if label1
+      +span(label1)(class="last-span")
+    else if block
+      block
+
+mixin radio(label,name)
+  +formItem(label)
+    el-radio-group(v-model="formData.#{name}")&attributes(attributes)
+      el-radio(v-for="val in formOptions.#{name}",:label="val[0]") {{val[1] | res}}
+
+mixin radioNoLabel(name)
+  el-radio(v-for="val in formOptions.#{name}" v-model="formData.#{name}",:label="val[0]")&attributes(attributes) {{val[1] | res}}
+
+mixin checkbox(label,name,label1="")
+  - var isIds= label1.indexOf("ids_")==0?true:false;
+  +formItem(label)
+    if isIds
+      el-checkbox(v-model="formData.#{name}",:true-label="formOptions.#{name}[0][0]",:false-label="formOptions.#{name}[1][0]")&attributes(attributes) {{vuex.res.#{label1}}}
+    else 
+      el-checkbox(v-model="formData.#{name}",:true-label="formOptions.#{name}[0][0]",:false-label="formOptions.#{name}[1][0]")&attributes(attributes) #{label1}    
+
+mixin switch(label,name)
+  +formItem(label)
+    el-switch(v-model="#{name}" on-text="" off-text="")&attributes(attributes)
+      
+mixin text(label,val,label1)
+  +formItem(label)&attributes(attributes)
+    div.el-text  #{val}
+    if label1
+      +span(label1)(class="last-span")
+    else if block
+      block
+
+mixin subText(label,val,label1)
+  el-form-item.sub-text(label="#{label}")&attributes(attributes)
+    div  #{val}
+    if label1
+      +span(label1)
+    else if block
+      block
+    
+mixin button(label)
+  - var isIds= label.indexOf("ids_")==0?true:false;
+  if isIds
+    el-button&attributes(attributes)(type="primary" size="small") {{vuex.res.#{label}}}
+  else
+    el-button&attributes(attributes)(type="primary" size="small") #{label}  
+
+mixin formBtn()
+  +formItem("")
+    +button("ids_apply")(type="primary" @click="update")
+    +button("ids_cancel")(type="primary" @click="reset")
+
+mixin breadcrumb(title)
+  - var isIds= title.indexOf("ids_")==0?true:false;
+  if isIds
+    h3.breadcrumb&attributes(attributes) {{vuex.res.#{title}}}
+  else
+    h3.breadcrumb&attributes(attributes) #{title}  
+
+mixin sideMenuPage(menu)
+  el-row
+    el-col(:span="5")
+      side-menu
+    el-col(:span="19")
+      .main-block
+        if block
+        block
+
+mixin inputNone(label,model)
+  - var prop= model.replace(/\./,':');
+  span(v-model="formData.#{model}" v-if="typeof formData.#{model} =='number'")
+  el-input(v-model="formData.#{model}" v-else)&attributes(attributes)
+
+mixin formCheckbox(name,label1)
+  - var isIds= label1.indexOf("ids_")==0?true:false;
+  div&attributes(attributes)
+    if isIds
+      el-checkbox(v-model="formData.#{name}",:true-label="formOptions.#{name}[0][0]",:false-label="formOptions.#{name}[1][0]")&attributes(attributes) {{vuex.res.#{label1}}}
+    else
+      el-checkbox(v-model="formData.#{name}",:true-label="formOptions.#{name}[0][0]",:false-label="formOptions.#{name}[1][0]")&attributes(attributes) #{label1}
+
+  
+
+

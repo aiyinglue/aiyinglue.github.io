@@ -1,0 +1,79 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1496714175790'); /* IE9*/
+  src: url('iconfont.eot?t=1496714175790#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1496714175790') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1496714175790') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1496714175790#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-devicemgmt:before { content: "\e60a"; }
+
+.icon-dailup:before { content: "\e60b"; }
+
+.icon-deviceinfo:before { content: "\e60c"; }
+
+.icon-natsetting:before { content: "\e60d"; }
+
+.icon-security:before { content: "\e60f"; }
+
+.icon-setup-wizard:before { content: "\e610"; }
+
+.icon-SMS:before { content: "\e611"; }
+
+.icon-upgrade:before { content: "\e612"; }
+
+.icon-wlan:before { content: "\e613"; }
+
+.icon-calllogs:before { content: "\e614"; }
+
+.icon-status:before { content: "\e616"; }
+
+.icon-share:before { content: "\e617"; }
+
+.icon-reset:before { content: "\e618"; }
+
+.icon-qos:before { content: "\e619"; }
+
+.icon-lan:before { content: "\e61a"; }
+
+.icon-wan:before { content: "\e61b"; }
+
+.icon-ic_arrow_up:before { content: "\e61c"; }
+
+.icon-ic_arrow_dowm:before { content: "\e61d"; }
+
+.icon-ic_global_off:before { content: "\e61e"; }
+
+.icon-ic_message:before { content: "\e61f"; }
+
+.icon-ic_global_on:before { content: "\e620"; }
+
+.icon-ic_message_allread:before { content: "\e621"; }
+
+.icon-ic_SIM:before { content: "\e622"; }
+
+.icon-ic_update:before { content: "\e623"; }
+
+.icon-ic_wifi_off:before { content: "\e624"; }
+
+.icon-ic_usb_disconnect:before { content: "\e625"; }
+
+.icon-ic_usb_connect:before { content: "\e626"; }
+
+.icon-ic_wifi_on:before { content: "\e627"; }
+
+.icon-help:before { content: "\e628"; }
+
+.icon-device-access:before { content: "\e62a"; }
+
+.icon-statistics:before { content: "\e62b"; }
+

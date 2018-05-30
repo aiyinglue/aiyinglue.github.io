@@ -1,0 +1,28 @@
+{
+  "verTime": "2018-05-27 17:25:11",
+  "langListSupport": [
+    "en",
+    "fr",
+    "it",
+    "sp"
+  ],
+  "pageTitle": "4G LINKHUB",
+  "NetTypeNOSERVICE": "NA",
+  "NetTypeGPRS": "2G",
+  "NetTypeEDGE": "2G",
+  "NetTypeHSPA": "3G",
+  "NetTypeHSUPA": "3G",
+  "NetTypeUMTS": "3G",
+  "NetTypeHSPAPLUS": "3G+",
+  "NetTypeDCHSPAPLUS": "3G+",
+  "NetTypeLTE": "4G",
+  "NetTypeLTEPLUS": "4G+",
+  "NetTypeGSM": "2G",
+  "SearchNetResultGSM": "2G",
+  "SearchNetResultUMTS": "3G",
+  "SearchNetResultLTE": "4G",
+  "SearchNetResultCDMA": "CDMA",
+  "SearchNetResultUnknown": "NA",
+  "defaultLanguage": "en",
+  "defaultWlanCountryCode": "GB"
+}

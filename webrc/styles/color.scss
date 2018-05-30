@@ -1,0 +1,92 @@
+/*color*/
+$color_main_level_1: #01a9f0;
+$color_main_level_2: #0094d2;
+@import '~@scss/color_base.scss';
+$color_app_bg: #fff;
+$color_header_bg: #fff;
+$color_main_block_bg: #fff;
+
+$color_footer_bg: $color_app_bg;
+
+$color_sideMenu_bg: #f4f4f4;
+
+$color_el_text_font: #1f2d3d;
+
+$color_table_th_bg: #eeeeee; 
+$color_table_td_bg: #f5f5f5;
+$color_table_border: #fff;
+
+$color_header_link_font: #c7c7c7;
+$color_header_link_font_hover: $color_main_level_1;
+
+$color_breadcrumb_font: $color_main_level_1;
+$color_breadcrumb_borderBottom: #ccc;
+
+$color_submenu_bg: #ededed;
+$color_submenu_font: #535353;
+$color_submenu_active_font: #535353;
+$color_submenu_active_bg: $color_app_bg;
+$color_submenu_border: #FFF;
+
+$color_no_submenu_active_font: $color_main_level_1;
+$color_no_submenu_active_bg: $color_app_bg;
+
+$color_main_menu_bg: $color_main_level_1;
+$color_main_menu_font: #fff;
+$color_main_menu_hover_font: #fff;
+$color_main_menu_hover_bg: $color_main_level_2;
+$color_main_menu_borderRight: #ddd;
+
+$color_wifi_modeTitle_font: $color_main_level_1;
+
+$color_step_finish_bg: $color_main_level_1;
+$color_step_finish_font: #fff;
+$color_step_finish_border: $color_main_level_1;
+
+$color_step_process_bg: #c0ccda;
+$color_step_process_font: #fff;
+$color_step_process_border: #c0ccda;
+
+$color_el_button_bg: #fff;
+$color_el_button_font: #1F2D3D;
+$color_el_button_border: #c0ccda;
+
+$color_el_button_hover_bg: #fff;
+$color_el_button_hover_font: #1F2D3D;
+$color_el_button_hover_border: $color_main_level_1;
+
+$color_el_button_primary_bg: $color_main_level_1;
+$color_el_button_primary_font: #fff;
+$color_el_button_primary_border: $color_main_level_1;
+
+$color_el_button_primary_hover_bg: $color_main_level_2;
+$color_el_button_primary_hover_font: #fff;
+$color_el_button_primary_hover_border: $color_main_level_2;
+
+$color_el_button_danger_bg: #ff4949;
+$color_el_button_danger_font: #fff;
+$color_el_button_danger_border: #ff4949;
+
+$color_el_button_danger_hover_bg: #ff6d6d;
+$color_el_button_danger_hover_font: #fff;
+$color_el_button_danger_hover_border: #ff6d6d;
+
+$color_radio_checkbox_bg: $color_main_level_1;
+$color_radio_checkbox_border: $color_main_level_1;
+
+$color_message_box_title_font: #fff;
+$color_message_box_closeBtn: #fff;
+$color_message_box_closeBtn_hover: #eee;
+
+$color_gray666_font: #666;
+$color_gray999_font: #999;
+$color_grayNote_font: #5e6d82;
+$color_tips_error_font: red;
+
+$color_icon_off_font: #B7B7B7;
+$color_icon_on_font: $color_main_level_1;
+$color_header_title_font: $color_main_level_1;
+
+$color_loading_spinner: $color_main_level_1;
+
+@import "~@scss/color_custom.scss";

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="user-scalable=no">
+    <script>
+      var lteIE8 = false;
+    </script> 
+    <!--[if lte IE 8]> 
+    <script>
+      var lteIE8 = true;
+    </script> 
+    <![endif]-->
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      if (lteIE8) {
+        window.location.href = "default.html"
+      }
+    </script> 
+    <script src="/dist/vendor.dll.js"></script>
+  </body>
+</html>

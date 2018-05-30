@@ -1,0 +1,826 @@
+@import '~@scss/color.scss';
+$width_main: 980px;
+$header_height: 80px;
+$logo_height: 64px;
+
+.el-breadcrumb {
+  padding: 10px 10px 0 0;
+  margin-bottom: 10px;
+}
+
+.el-form {
+  width: 550px;
+  margin: 0 auto;
+  padding: 20px 0px;
+  .el-select,
+  .el-input,
+  .el-text {
+    width: 250px;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  .sub-text {
+    margin-top: -20px;
+    .el-form-item__content {
+      line-height: 20px;
+      color: $color_gray666_font;
+      font-size: 12px;
+    }
+  }
+}
+
+.el-form-item__error {
+  position: relative;
+}
+
+.el-tabs {
+  display: block;
+  margin-top: 5px;
+  margin-left: -1px;
+}
+.category{
+  padding-top: 15px;
+}
+.category-title {
+  margin: 10px auto;
+  padding-top: 10px;
+}
+
+.el-text,
+.el-form-item__label {
+  color: $color_el_text_font;
+}
+
+.el-tabs__item {
+  height: 34px;
+  line-height: 34px;
+}
+
+.icon-help {
+  color: $color_main_level_1;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.el-form-item__label .icon-help {
+  float: right;
+  margin: -3px 0 0 5px;
+}
+
+.main-block {
+  float: right;
+  width: 97%;
+  padding: 0 0 10px 10px;
+  min-height: 500px;
+  background: $color_main_block_bg;
+  .breadcrumb {
+    border-bottom: 1px solid $color_breadcrumb_borderBottom;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    color: $color_breadcrumb_font;
+    margin-top: 10px;
+    font-size: 1.35em;
+  }
+  .main-body {
+    padding: 20px;
+  }
+}
+
+.main {
+  padding: 15px 0;
+}
+
+@mixin svgIcon {
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 30px;
+  width: 36px;
+  float: left;
+  margin-top: 5px;
+}
+
+.status {
+  float: right;
+  margin-top: -10px;
+  .iconfont {
+    font-size: 32px;
+  }
+  li {
+    float: left;
+    list-style-type: none;
+    margin: 1px 1px;
+    height: 32px;
+    line-height: 39px;
+    min-width: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+    &.icon-ic_update {
+      color: $color_icon_on_font;
+    }
+    &.icon-network-type,
+    &.icon-wps {
+      color: $color_icon_on_font;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    &.svg-signal {
+      svg {
+        .st0 {
+          fill: $color_icon_on_font;
+        }
+      }
+      position: relative;
+      i.roaming {
+        background-position: 0 -17px;
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        top: -10px;
+        left: 1px;
+        color: $color_icon_on_font;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+    &.icon-ic_global_off,
+    &.icon-ic_wifi_off,
+    &.icon-ic_usb_disconnect {
+      color: $color_icon_off_font;
+    }
+    &.icon-ic_global_on,
+    &.icon-ic_wifi_on,
+    &.icon-ic_usb_connect {
+      color: $color_icon_on_font;
+    }
+    &.icon-sms {
+      display: none;
+      &.icon-ic_message {
+        display: block;
+        color: $color_icon_on_font;
+      }
+    }
+    &.svg-sms-full {
+      display: block;
+      svg {
+        margin-top: 3px;
+        .st0 {
+          fill: $color_icon_on_font;
+        }
+      }
+    }
+    &.icon-ic_usb_disconnect {
+      &.connect {
+        color: $color_icon_on_font;
+      }
+    }
+  }
+}
+
+.main-menu.el-menu {
+  background: $color_main_menu_bg;
+  padding: 0px 0 0 160px;
+  .el-menu-item {
+    text-align: center;
+    color: $color_main_menu_font;
+    border-bottom: none;
+    min-width: 160px;
+    height: 44px;
+    line-height: 44px;
+    padding-right: 19px;
+    span {
+      display: block;
+      width: 100%;
+      height: 28px;
+      line-height: 28px;
+      margin: 8px 0;
+      float: left;
+    }
+    &:last-child {
+      .main-menu-line {
+        display: none;
+      }
+    }
+  }
+  .main-menu-line {
+    height: 28px;
+    border-right: 1px solid $color_main_menu_borderRight;
+    float: left;
+    position: absolute;
+    margin: 8px 0;
+    margin-left: 19px;
+  }
+}
+
+.el-menu .el-menu-item,
+.el-menu .el-submenu {
+  border-bottom: 1px solid $color_submenu_border;
+}
+
+.el-submenu .el-menu .el-menu-item {
+  background: $color_submenu_bg;
+  color: $color_submenu_font;
+  &.is-active {
+    color: $color_submenu_active_font;
+    background: $color_submenu_active_bg;
+  }
+}
+
+.no-submenu.el-menu-item {
+  padding-left: 5px;
+  &.is-active {
+    color: $color_no_submenu_active_font;
+    background: $color_no_submenu_active_bg;
+  }
+}
+
+.el-menu--horizontal>.el-menu-item:hover,
+.el-menu--horizontal>.el-menu-item.is-active {
+  border-bottom: none;
+  background: $color_main_menu_hover_bg;
+  color: $color_main_menu_hover_font;
+}
+
+.el-menu-item,
+.el-submenu__title {
+  transition: none;
+}
+
+#sideMenu .el-submenu .el-submenu__title {
+  padding-left: 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+.el-message-box__header {
+  position: relative;
+  padding: 10px 20px;
+  background: $color_main_level_1;
+}
+
+.el-message-box__title {
+  color: $color_message_box_title_font;
+}
+
+.el-message-box__close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: $color_message_box_closeBtn;
+  cursor: pointer;
+  line-height: 20px;
+  text-align: center;
+  &:hover {
+    color: $color_message_box_closeBtn_hover;
+  }
+}
+
+#ie-9 {
+  .el-select .el-input .el-input__icon {
+    top: 0px\9\0;
+  }
+  .el-select .el-input .is-reverse.el-input__icon {
+    transform: translateY(0%)\9\0;
+  }
+}
+
+.el-input-number {
+  width: auto;
+  .el-input__inner {
+    padding-right: 10px;
+  }
+  .el-icon-plus,
+  .el-icon-minus {
+    display: none;
+  }
+}
+
+.margin-auto {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.el-step__head {
+  &.is-text {
+    &.is-finish {
+      color: $color_step_finish_font;
+      background-color: $color_step_finish_bg;
+      border-color: $color_step_finish_border;
+    }
+    &.is-process {
+      color: $color_step_process_font;
+      background-color: $color_step_process_bg;
+      border-color: $color_step_process_border;
+    }
+  }
+}
+
+.el-step__title {
+  text-align: center;
+  &.is-finish {
+    color: $color_main_level_1;
+  }
+}
+
+//- home status 
+.internetInfo {
+  .el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .line {
+    margin: 8px 0 21px 0;
+    border-top: 1px solid $color_main_level_1;
+  }
+}
+
+.textAlignRight {
+  text-align: right;
+  //word-break: break-all;
+}
+.restoreArea{
+  .textAlignRight {
+  padding-top:3px;
+  padding-bottom:3px;
+}
+}
+
+.textBlue {
+  color: $color_main_level_1;
+}
+
+//upload File css
+.uploadFile {
+  width: 384px;
+  position: relative;
+  height: 30px;
+  overflow: hidden;
+  padding-bottom: 13px;
+  .fileUpload {
+    position: absolute;
+    z-index: 9;
+    width: 20%;
+    overflow: hidden;
+    height: 30px;
+    opacity: 0;
+    right: 50px;
+    font-size: 26px;
+    cursor: pointer;
+  }
+  .inline-input {
+    float: left;
+  }
+}
+
+.backupRestore {
+  .paddingBox {
+    padding: 23px 0;
+  }
+  .uploadFile,
+  .backupTxt {
+    padding-bottom: 13px;
+  }
+  .restoreArea {
+    padding-top: 37px;
+  }
+}
+
+.el-loading-text {
+  display: inline;
+  position: relative;
+  left: 12px;
+  bottom: 12px;
+}
+
+.tips-error {
+  padding: 5px 0 0 0;
+  color: $color_tips_error_font;
+  font-size: 12px;
+}
+
+#login {
+  .title {
+    padding: 0 0 26px 0;
+  }
+  .paddingVal {
+    margin: 6px 0 10px 0;
+  }
+  .el-form {
+    width: 250px;
+  }
+  .btnLogin button {
+    width: 100%;
+    padding: 11px 0;
+    font-size: 14px;
+  }
+  .loginArea {
+    .el-input {
+      width: 100%;
+    }
+    .forgotPassword {
+      margin: 25px 0 0 0;
+      font-size: 14px;
+      cursor: pointer;
+      color: $color_el_text_font;
+    }
+  }
+}
+
+.loginBox .el-dialog--tiny {
+  min-width: 300px;
+}
+
+.jumper {
+  float: right;
+  .el-input {
+    width:40px;
+    .el-input__inner{
+      width:40px;
+      float: right;
+    }
+    float: right;
+  }
+  .el-button {
+    float: right;
+    margin-left: 5px
+  }
+}
+
+.modeTitle {
+  label {
+    font-size: 1.17em;
+    color: $color_wifi_modeTitle_font;
+  }
+  .el-form-item__content div {
+    color: $color_gray999_font;
+  }
+}
+
+.add-btn {
+  float: right;
+  margin-bottom: 2px;
+}
+
+.tips {
+  font-size: 14px;
+  margin-top: 60px;
+  color: $color_grayNote_font;
+}
+
+a.el-button {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+}
+
+
+/*icon font style*/
+
+.icon-style {
+  font-size: 28px;
+}
+
+.iconfont {
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+}
+
+.el-menu .iconfont {
+  float: left;
+  margin-top: 13px;
+}
+
+#sideMenu {
+  min-height: 500px;
+  background: $color_sideMenu_bg;
+}
+
+#sideMenu .el-menu {
+  background: $color_sideMenu_bg;
+  .el-menu-item,
+  .el-submenu__title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    .el-submenu__icon-arrow {
+      right: 10px;
+    }
+  }
+}
+
+.el-submenu {
+  .el-menu-item {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 45px;
+    padding-left: 30px;
+    padding-right: 10px;
+  }
+}
+
+.el-table-div {
+  overflow: auto;
+  overflow-y: hidden;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  .el-table {
+    overflow: auto;
+    overflow-y: hidden;
+  }
+}
+
+.el-table {
+  margin: 10px auto 10px;
+  font-size: 14px;
+  border-spacing: 0;
+  border: 1px solid $color_table_border;
+  max-width: 150%;
+  tr,
+  tr th,
+  tr td,
+  th.is-leaf {
+    white-space: nowrap;
+    text-align: center;
+    border: 1px solid $color_table_border;
+  }
+  tr th,
+  .el-table__fixed-header-wrapper thead div,
+  .el-table__header-wrapper thead div {
+    background-color: $color_table_th_bg;
+  }
+  tr td {
+    background: $color_table_td_bg;
+  }
+  .cell,
+  th>div {
+    padding: 0 5px;
+    word-break: break-word;
+  }
+  .el-table__empty-block {
+    display: none;
+  }
+  &::before,
+  &::after {
+    background: none;
+  }
+  col[name="gutter"],
+  .gutter {
+    display: none;
+  }
+}
+
+.el-table .el-tooltip.cell,
+.el-table th,
+.el-table th > div span {
+  max-width: 278px;
+}
+
+
+/* td support even color different 
+.table tr:nth-child(odd) td { 
+  background-color: $color_table_bg;
+}
+*/
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.header {
+  width: $width_main;
+  margin: 0 auto;
+  height: $header_height;
+  background: $color_header_bg;
+  .logo {
+    float: left;
+    height: $logo_height;
+    text-align: center;
+    font-size: 24px;
+    margin-right: 10px;
+    margin-top: ($header_height - $logo_height)/2;
+    .svg-logo {
+      float: left;
+      height: $logo_height;
+      svg {
+        height: $logo_height;
+        width: auto;
+      }
+    }
+    .title-name {
+      vertical-align: middle;
+      line-height: $header_height;
+      margin-left: 5px;
+      font-size: 30px;
+      color: $color_header_title_font;
+    }
+  }
+}
+
+.container {
+  width: $width_main;
+  margin: 0 auto;
+  background: $color_app_bg;
+}
+
+.footer {
+  width: $width_main;
+  margin: 0 auto;
+  height: 30px;
+  background: $color_footer_bg;
+  line-height: 30px;
+  font-size: 13px;
+  text-align: center;
+  .svg-logo {
+    height: 15px;
+    position: relative;
+    top: 3px;
+    right: 5px;
+  }
+  .copyright {
+    margin: 0 auto;
+  }
+}
+
+.top-menu {
+  margin-right: 20px;
+  height: 30px;
+  clear: both;
+  display: block;
+  a,
+  a:hover,
+  a:visited,
+  a:active,
+  a:focus,
+  .lang-dropdown {
+    color: $color_header_link_font;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  a:hover {
+    color: $color_header_link_font_hover;
+  }
+}
+
+.float-right {
+  float: right;
+}
+
+.clear-both {
+  clear: both;
+}
+.el-dropdown-menu__item {
+  color: $color_header_link_font;
+  font-size: 13px;
+}
+
+
+/*button*/
+
+.el-button {
+  background: $color_el_button_bg;
+  border: 1px solid $color_el_button_border;
+  color: $color_el_button_font;
+  &:focus,
+  &:hover {
+    background: $color_el_button_hover_bg;
+    border: 1px solid $color_el_button_hover_border;
+    color: $color_el_button_hover_font;
+  }
+}
+
+.el-button--primary {
+  background: $color_el_button_primary_bg;
+  border: 1px solid $color_el_button_primary_border;
+  color: $color_el_button_primary_font;
+  &:focus,
+  &:hover {
+    background: $color_el_button_primary_hover_bg;
+    border: 1px solid $color_el_button_primary_hover_border;
+    color: $color_el_button_primary_hover_font;
+  }
+}
+
+.el-button--danger {
+  background: $color_el_button_danger_bg;
+  border: 1px solid $color_el_button_danger_border;
+  color: $color_el_button_danger_font;
+  &:focus,
+  &:hover {
+    background: $color_el_button_danger_hover_bg;
+    border: 1px solid $color_el_button_danger_hover_border;
+    color: $color_el_button_danger_hover_font;
+  }
+}
+
+.el-radio__input.is-checked .el-radio__inner,
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-radio__inner.is-checked,
+.el-switch__input:checked+.el-switch__core,
+.el-select-dropdown__item.selected,
+.el-select-dropdown__item.selected.hover,
+.el-checkbox__inner.is-checked,
+.el-pager li.active,
+.el-radio-button__orig-radio:checked+.el-radio-button__inner {
+  background: $color_radio_checkbox_bg;
+  border: 1px solid $color_radio_checkbox_border;
+  box-shadow: none;
+}
+
+.el-input__inner:focus,
+.el-checkbox__inner.is-focus,
+.el-select .el-input__inner:focus,
+.el-radio__inner:not(.is-disabled):hover,
+.el-checkbox__inner:not(.is-disabled):hover,
+.el-textarea__inner:focus {
+  border-color: $color_main_level_1;
+}
+
+.el-radio-button__inner:hover {
+  color: $color_main_level_1;
+}
+
+
+/*sms inbox*/
+
+#inbox {
+  .iconfont {
+    font-size: 32px;
+  }
+  .icon-ic_message {
+    color: $color_icon_on_font;
+  }
+  .icon-ic_message_allread {
+    color: $color_icon_off_font;
+  }
+}
+
+/*sms report*/
+
+.el-notification {
+  .el-icon-information {
+    color: $color_main_level_1;
+  }
+}
+
+
+/*dialog*/
+
+.el-dialog__close:hover {
+  color: $color_main_level_1;
+}
+
+.el-dialog {
+  min-width: 500px;
+}
+
+
+/*loading svg*/
+
+.el-loading-spinner {
+  .path {
+    stroke: $color_loading_spinner;
+  }
+}
+/** import font file css **/
+@import "~@scss/fonts.css";
+/** import custom style file **/
+@import "~@scss/common_RSlow.scss";
+@import "~@scss/common_custom.scss";
+@import '~@scss/iconfont.css';
+
+.f_r{
+  float:right;
+}
+.fl{
+  float:right;
+}
+
+.el-form-item__content span.last-span {
+    font-size: 12px;
+    position: absolute;
+}
+
+.right-switch-text{
+  padding-left:10px;
+}
+
