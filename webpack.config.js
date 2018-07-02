@@ -9,9 +9,10 @@ const url = require('url')
 const publicPath = ''
 var srcCatalog = "./webrc/"
 
+
 module.exports = (options = {}) => ({
   entry: {
-    "build": [srcCatalog + '/app.js', srcCatalog + '/styles/common.scss']
+    "build": srcCatalog + '/app.js'
   },
   output: {
     path: resolve(__dirname, 'www/dist'),
@@ -22,18 +23,16 @@ module.exports = (options = {}) => ({
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      '@': resolve(__dirname, srcCatalog),
-      '@scss': resolve(__dirname, srcCatalog, 'styles'),
+      '@': resolve(__dirname,srcCatalog),
+      '@scss': resolve(__dirname,srcCatalog,'styles'),
     }
   },
   module: {
     rules: [{
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            //scss: 'style-loader!css-loader!sass-loader'
-            //scss:ExtractTextPlugin.extract(['style-loader','css-loader','sass-loader'])
+      test: /\.vue$/,
+      loader: 'vue-loader',
+      options: {
+        loaders: {
             scss: ExtractTextPlugin.extract({
               use: ['css-loader', 'sass-loader'],
               fallback: 'style-loader'
@@ -46,24 +45,24 @@ module.exports = (options = {}) => ({
               use: ['css-loader'],
               fallback: 'vue-style-loader' // <- 这是vue-loader的依赖，所以如果使用npm3，则不需要显式安装
             })
-          }
         }
-      }, {
-        test: /\.js$/,
-        use: ['babel-loader'],
-        exclude: /node_modules/
-      }, {
-        test: /\.jade$/,
-        use: ['jade-loader']
-      }, {
-        test: /\.html$/,
-        use: [{
-          loader: 'html-loader',
-          options: {
-            root: resolve(__dirname, 'src'),
-            attrs: ['img:src', 'link:href']
-          }
-        }]
+      }
+    }, {
+      test: /\.js$/,
+      use: ['babel-loader'],
+      exclude: /node_modules/
+    }, {
+      test: /\.jade$/,
+      use: ['jade-loader']
+    }, {
+      test: /\.html$/,
+      use: [{
+        loader: 'html-loader',
+        options: {
+          root: resolve(__dirname, 'src'),
+          attrs: ['img:src', 'link:href']
+        }
+      }]
       },
       {
         test: /\.scss$/,
@@ -76,25 +75,24 @@ module.exports = (options = {}) => ({
         use: ExtractTextPlugin.extract({
           use: ['css-loader']
         })
-      }, {
-        test: /favicon\.png$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]?[hash]'
-          }
-        }]
-      }, {
-        test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
-        exclude: /favicon\.png$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 10000
-          }
-        }]
-      }
-    ]
+    }, {
+      test: /favicon\.png$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
+        }
+      }]
+    }, {
+      test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
+      exclude: /favicon\.png$/,
+      use: [{
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
+      }]
+    }]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -122,13 +120,10 @@ module.exports = (options = {}) => ({
       from: srcCatalog + '/favicon.ico',
       to: '../favicon.ico'
     }]),
+    new webpack.DllReferencePlugin({context: __dirname, manifest: require('./vendor/vendor-manifest.json')}),
     new ExtractTextPlugin({
       filename: options.dev ? '[name].css' : '[name].css?[chunkhash]',
       allChunks: true
-    }),
-    new webpack.DllReferencePlugin({
-      context: __dirname,
-      manifest: require('./vendor/vendor-manifest.json')
     })
   ],
 
